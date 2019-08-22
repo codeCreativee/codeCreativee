@@ -1,60 +1,204 @@
-<!DOCTYPE HTML>
-<html>
-    <head>
-        <title>Coincidir</title>
-        <meta charset="utf-8">
-    </head>
-    <body>
-    <h1> Coincidir</h1>
-    <p> Hay historias de amor, que nunca terminan <br> que se esconden tras la vuelta, de tu esquina <br> que bailan sobre un solo pie <br> que reman con un remo, que beben sin sed <br> Hay espacio, hay dolor, hay deseo <br>
-Corazones en el aire llenos de agujero <br>
-Hay besos compartidos, robados elegidos <br>
-Mil señales de humo entre amantes perdidos<br>
-Amores de un rato, in tiempo ni trato<br>
-Leyes de gravedad sin caída<br>
-Cicatrices sin herida expedidas<br>
-Bienvenidas que suelen caminar por la misma avenida<br>
-Hay tanto a elegir<br>
-Y tu y yo aquel día coincidir, coincidir, coincidir<br>
-Era tu historia<br>
-Se cruzo con la mía<br>
-Tanta gente, tanta gente ahí fuera<br>
-Y coincidir aquel día coincidir, coincidir<br>
-Hay historias al borde, del precipicio<br>
-Que se buscan en los baúles, de un principio<br>
-Hay noches sin sofocos<br>
-Lagrimas ni princesas ni espejos rotos<br>
-Hay revoluciones entre corazones<br>
-Partidas de dos labios sin peones<br>
-Sudores tentaciones, fitas sin flores<br>
-Llenas de pasiones sobre parques congelados<br>
-De mirones entre neones<br>
-Amores platónicos conformes<br>
-Camas sin treguas sin confecciones<br>
-Soldados del amor sin fusiles<br>
-Que apuntan a dianas de corazones sensibles<br>
-Tanto a elegir<br>
-Y tu y yo aquel día coincidir<br>
-Coincidir<br>
-Coincidir<br>
-Era tu historia<br>
-Se cruzo con la mía<br>
-Tanta gente tanta gente ahí fuera<br>
-Y coincidir aquel día hay historias de amantes<br>
-En las trincheras<br>
-Que luchan el la batalla diaria<br>
-De esta ciencia incierta<br>
-Buscando algún hueco<br>
-De algún corazón abierto<br>
-Buscando amor<br>
-Hey óyeme<br>
-Tan solo tu y yo<br>
-Tan solo tu y yo<br>
-Y coincidir hoy coincidir coincidir<br>
+# Gasha
+<!DOCTYPE html>
+<html> 
+  <head>
+    <title>Calcula diferencia de área</title> 
+  </head>
+  <body>
+	<!--This draws the canvas on the webpage -->
+    <canvas id="mycanvas"></canvas> 
+  </body>
+ 
+  <!-- Include the processing.js library -->
+  <!-- See https://khanacademy.zendesk.com/hc/en-us/articles/202260404-What-parts-of-ProcessingJS-does-Khan-Academy-support- for differences -->
+  <script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script> 
+  <script>
+  var programCode = function(processingInstance) {
+    with (processingInstance) {
+      size(400, 400); 
+      frameRate(30);
         
-        
-        Axeeeel
-    
-    </p>
-    </body>
+      // Paste code from Khan Academy here:
+   var E=0;
+draw= function() {
+    background(255, 255, 255);
+//gráfica
+strokeWeight(2);
+line(50,350,350,350);//lenght
+line(50,350,50,50);//time
+var marker=function (x){
+    strokeWeight(1);
+  line(x,340,x,360);
+};// marker
+var markerTime=function(y){
+  line(45,y,55,y);
+};//markerTime
+var drawMarkers=function(){
+marker(60);
+markerTime(340);
+marker(70);
+markerTime(330);
+marker(80);
+markerTime(320);
+marker(90);
+markerTime(310);
+marker(100);
+markerTime(300);
+marker(110);
+markerTime(290);
+marker(120);
+markerTime(280);
+marker(130);
+markerTime(270);
+marker(140);
+markerTime(260);
+marker(150);
+markerTime(250);
+marker(160);
+markerTime(240);
+marker(170);
+markerTime(230);
+marker(180);
+markerTime(220);
+marker(190);
+markerTime(210);
+marker(200);
+markerTime(200);
+marker(210);
+markerTime(190);
+marker(220);
+markerTime(180);
+marker(230);
+markerTime(170);
+marker(240);
+markerTime(160);
+marker(250);
+markerTime(150);
+marker(260);
+markerTime(140);
+marker(270);
+markerTime(130);
+marker(280);
+markerTime(120);
+marker(290);
+markerTime(110);
+marker(300);
+markerTime(100);
+marker(310);
+markerTime(90);
+marker(320);
+markerTime(80);
+marker(330);
+markerTime(70);
+marker(340);
+markerTime(60);
+marker(350);
+markerTime(50);
+};//draw markers
+drawMarkers();
+//square
+fill(18, 180, 255);
+var mM= constrain(mouseX,50,350);
+rect(50,400-mM,mM-50,mM-50);
+//Dates
+fill(212, 21, 21);
+var s= createFont("serif");
+textFont(s);
+//
+text("Arista:",300,20);
+var a=mouseX-50;
+if(a>=0){
+    fill(40, 25, 255);
+text(a,340,20);
+}//if
+else {
+    fill(255, 0, 0);
+    text("¡El arista no puede ser negativa!",200,200);
+       fill(40, 25, 255);
+text("Sube en X",340,20);
+}//else
+//
+fill(212,21,21);
+text("Tiempo:",194,40);
+var t=350-mouseY;
+if(t>=0){
+    fill(40, 25, 255);
+text(t,237,40);
+}//if
+else {
+    fill(255, 0, 0);
+    text("¡El tiempo no puede ser negativo!",200,220);
+    fill(40, 25, 255);
+    t= text("Sube en Y",237,40);
+}//else
+//
+    var colorFill= fill(255, 255, 255);
+    var Etext= text(E,80,20);
+    fill(212,21,21);
+text("Expansión:",20,20);
+var Eelse=function(chain){
+if ((mouseY<=350 || mouseX<50 || mouseX>350) && E ===0){
+colorFill= fill(40, 25, 255);
+Etext= text(chain,80,20);
+}//if
+ else if (mouseY>350 && mouseX>50 && mouseX<=350){
+    colorFill= fill(40, 25, 255);
+    Etext= text(E,80,20);
+}//else if
+else {
+    colorFill= fill(40, 25, 255);
+    Etext= text(E,80,20);
+}
+};//Eelse
+Eelse("Presione en el eje X la expansión que quiera");
+var drawE=function(strict,e){
+if(mouseX === strict && mouseX>50){
+mouseClicked=function(){
+     if(mouseX === strict && mouseY>350 && mouseY<370){
+     E=e;
+     }//if
+ };//mouseClicked
+}//if
+};//drawE
+var drawEs=function(){
+drawE(mouseX,mouseX-50);
+};//drawEs
+drawEs();
+//Arista final
+fill(255, 0, 0);
+if(mouseY<350){
+fill(212,21,21);
+text("Arista final:",300,40);
+fill(40, 25, 255);
+text(t*E+a,360,40);
+}//if
+else {
+    fill(212,21,21);
+text("Arista final:",287,40);
+    fill(40, 25, 255);
+text("sube en Y",348,40);
+}//else
+//
+if (mouseY>350 && mouseX>50 && mouseX<=350 && E !== 0){
+ fill(212,21,21);
+text("Diferencia de área:",120,20);
+ fill(40, 25, 255);
+ text((t*E+1)*(t*E+1)-1+(2*t*E)*(a-1),215,20);
+}//if
+else if(mouseY<350){
+     fill(212,21,21);
+text("Diferencia de área:",120,20);
+    fill(40, 25, 255);
+ text((t*E+1)*(t*E+1)-1+(2*t*E)*(a-1),215,20);
+}
+};// draw
+
+
+    }};
+
+  // Get the canvas that ProcessingJS will use
+  var canvas = document.getElementById("mycanvas"); 
+  // Pass the function to ProcessingJS constructor
+  var processingInstance = new Processing(canvas, programCode); 
+  </script>
 </html>
