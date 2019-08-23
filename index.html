@@ -165,12 +165,12 @@
     colorFill= fill(40, 25, 255);
     Etext= text(chain,80,20);
     }//if
-    //siguiendo con la variable "Eelse", si lo anterior no se cumple, y se cumple que mouseY      es mayor a 350 y mouseX es mayor a 50 y además menor o igual a 350 entonces se mostrará      el valor predeterminado para la expansión (E) que es 0
+    //siguiendo con la variable "Eelse", si lo anterior no se cumple, y se cumple que mouseY es mayor a 850 y mouseX es mayor a 50 y además menor o igual a 850 entonces se mostrará      el valor predeterminado para la expansión (E) que es 0
      else if (mouseY>850 && mouseX>50 && mouseX<=850){
         colorFill= fill(40, 25, 255);
         Etext= text(E,80,20);
     }//else if
-    //Siguiendo con la var "Eelse", si nada de lo anterior se cumple entonces se mostrará el       valor predeterminado de E
+    //Siguiendo con la var "Eelse", si nada de lo anterior se cumple entonces se mostrará el valor predeterminado de E
     else {
         colorFill= fill(40, 25, 255);
         Etext= text(E,80,20);
@@ -187,7 +187,7 @@
      };//mouseClicked
     }//if
     };//drawE
-    //La variable "drawEs" es una función que despliega drawE constantemente para renovar el       valor de E cada que se le de click
+    //La variable "drawEs" es una función que despliega drawE constantemente para renovar el valor de E cada que se le de click
     var drawEs=function(){
     drawE(mouseX,mouseX-50);
     };//drawEs
@@ -196,14 +196,14 @@
 
     //Arista final
     fill(255, 0, 0);
-    //Este if dice que si mouseY es menor a 350 entonces devolverá la arita final, multiplicando tiempo por expansión y sumando la arista.
-    if(mouseY<350){
+    //Este if dice que si mouseY es menor a 850 entonces devolverá la arita final, multiplicando tiempo por expansión y sumando la arista.
+    if(mouseY<850){
     fill(212,21,21);
     text("Arista final:",400,40);
     fill(40, 25, 255);
     text(t*E+a,470,40);
     }//if
-    //de lo contrario mostrará en su lugar un texto "Sube en Y" ya que no puede hacer el          cálculo con un tiempo negativo.
+    //de lo contrario mostrará en su lugar un texto "Sube en Y" ya que no puede hacer el cálculo con un tiempo negativo.
     else {
         fill(212,21,21);
     text("Arista final:",400,40);
