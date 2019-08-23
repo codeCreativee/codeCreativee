@@ -15,7 +15,7 @@
   <script>
   var programCode = function(processingInstance) {
     with (processingInstance) {
-      size(1200, 800); 
+      size(1200, 900); 
       frameRate(30);
         
       // Paste code from Khan Academy here:
@@ -28,7 +28,7 @@
     //gráfica
     strokeWeight(2);//ejes
     line(50, 1000, 1500, 1000);//lenght
-    line(50, 1000, 50, 50);//time
+    line(50, 850, 50, 50);//time
     //La función "marker" pone los marcadores de longitud en función de un "x" que le demos
     var marker=function (x){
         strokeWeight(1);//markers
@@ -201,7 +201,7 @@
     fill(212,21,21);
     text("Arista final:",400,40);
     fill(40, 25, 255);
-    text(t*E+a,460,40);
+    text(t*E+a,470,40);
     }//if
     //de lo contrario mostrará en su lugar un texto "Sube en Y" ya que no puede hacer el          cálculo con un tiempo negativo.
     else {
