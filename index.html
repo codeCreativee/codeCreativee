@@ -15,7 +15,7 @@
   <script>
   var programCode = function(processingInstance) {
     with (processingInstance) {
-      size(1100, 1100); 
+      size(1000, 1000); 
       frameRate(30);
         
       // Paste code from Khan Academy here:
@@ -106,9 +106,9 @@
 
     //square
     fill(18, 180, 255);
-    //La variable "mM" es "mínimo y máximo", es decir, que límita que el cuadrado pueda ser       más grande que nuestra gráfica, siendo el valor mínimo para X 50 y el máximo 350
-    var mM= constrain(mouseX, 50, 350);
-    rect(50 ,400-mM, mM-50, mM-50);
+    //La variable "mM" es "mínimo y máximo", es decir, que límita que el cuadrado pueda ser más grande que nuestra gráfica, siendo el valor mínimo para X 50 y el máximo 350
+    var mM= constrain(mouseX, 50, 990);
+    rect(50 ,1000-mM, mM-50, mM-50);
     ///square
 
     fill(212, 21, 21);
@@ -116,20 +116,20 @@
     textFont(s);
 
     //Arista
-    text("Arista:", 300, 20);
+    text("Arista:", 400, 20);
     //la variable "a" proporciona el valor de la arista
     var a = mouseX-50;
     //si la arista es mayor o igual a cero, mostrará su valor
     if(a>=0){
         fill(40, 25, 255);
-    text(a,340,20);
+    text(a,455,20);
     }//if
-    //de lo contrario en su lugar ocupará dos textos: uno diciendo que suba en X y otro           indicando que la arista no puede ser negativa
+    //de lo contrario en su lugar ocupará dos textos: uno diciendo que suba en X y otro indicando que la arista no puede ser negativa
     else {
         fill(255, 0, 0);
-        text("¡El arista no puede ser negativa!",200,200);
+        text("¡El arista no puede ser negativa!",500,500);
            fill(40, 25, 255);
-    text("Sube en X",340,20);
+    text("Sube en X",455,20);
     }//else
     ///Arista
     
@@ -141,7 +141,7 @@
     //Si el tiempo es mayor o igual a cero entoces despliega su valor
     if(t>=0){
         fill(40, 25, 255);
-    text(t,237,40);
+    text(t,250,40);
     }//if
     //De lo contrario despliega dos textos: Uno diciendo que el tiempo no puede        ser negativo y otro diciendo que suba en Y
     else {
@@ -196,19 +196,19 @@
 
     //Arista final
     fill(255, 0, 0);
-    //Este if dice que si mouseY es menor a 350 entonces devolverá la arita final, multiplic       ando tiempo por expansión y sumando la arista.
+    //Este if dice que si mouseY es menor a 350 entonces devolverá la arita final, multiplicando tiempo por expansión y sumando la arista.
     if(mouseY<350){
     fill(212,21,21);
-    text("Arista final:",300,40);
+    text("Arista final:",400,40);
     fill(40, 25, 255);
-    text(t*E+a,360,40);
+    text(t*E+a,460,40);
     }//if
     //de lo contrario mostrará en su lugar un texto "Sube en Y" ya que no puede hacer el          cálculo con un tiempo negativo.
     else {
         fill(212,21,21);
-    text("Arista final:",287,40);
+    text("Arista final:",400,40);
         fill(40, 25, 255);
-    text("sube en Y",348,40);
+    text("sube en Y",460,40);
     }//else
     ///Arista final
 
