@@ -19,178 +19,216 @@
       frameRate(30);
         
       // Paste code from Khan Academy here:
-   var E=0;
-draw= function() {
-    background(255, 255, 255);
-//gráfica
-strokeWeight(2);
-line(50,350,350,350);//lenght
-line(50,350,50,50);//time
-var marker=function (x){
-    strokeWeight(1);
-  line(x,340,x,360);
-};// marker
-var markerTime=function(y){
-  line(45,y,55,y);
-};//markerTime
-var drawMarkers=function(){
-marker(60);
-markerTime(340);
-marker(70);
-markerTime(330);
-marker(80);
-markerTime(320);
-marker(90);
-markerTime(310);
-marker(100);
-markerTime(300);
-marker(110);
-markerTime(290);
-marker(120);
-markerTime(280);
-marker(130);
-markerTime(270);
-marker(140);
-markerTime(260);
-marker(150);
-markerTime(250);
-marker(160);
-markerTime(240);
-marker(170);
-markerTime(230);
-marker(180);
-markerTime(220);
-marker(190);
-markerTime(210);
-marker(200);
-markerTime(200);
-marker(210);
-markerTime(190);
-marker(220);
-markerTime(180);
-marker(230);
-markerTime(170);
-marker(240);
-markerTime(160);
-marker(250);
-markerTime(150);
-marker(260);
-markerTime(140);
-marker(270);
-markerTime(130);
-marker(280);
-markerTime(120);
-marker(290);
-markerTime(110);
-marker(300);
-markerTime(100);
-marker(310);
-markerTime(90);
-marker(320);
-markerTime(80);
-marker(330);
-markerTime(70);
-marker(340);
-markerTime(60);
-marker(350);
-markerTime(50);
-};//draw markers
-drawMarkers();
-//square
-fill(18, 180, 255);
-var mM= constrain(mouseX,50,350);
-rect(50,400-mM,mM-50,mM-50);
-//Dates
-fill(212, 21, 21);
-var s= createFont("serif");
-textFont(s);
-//
-text("Arista:",300,20);
-var a=mouseX-50;
-if(a>=0){
-    fill(40, 25, 255);
-text(a,340,20);
-}//if
-else {
-    fill(255, 0, 0);
-    text("¡El arista no puede ser negativa!",200,200);
-       fill(40, 25, 255);
-text("Sube en X",340,20);
-}//else
-//
-fill(212,21,21);
-text("Tiempo:",194,40);
-var t=350-mouseY;
-if(t>=0){
-    fill(40, 25, 255);
-text(t,237,40);
-}//if
-else {
-    fill(255, 0, 0);
-    text("¡El tiempo no puede ser negativo!",200,220);
-    fill(40, 25, 255);
-    t= text("Sube en Y",237,40);
-}//else
-//
-    var colorFill= fill(255, 255, 255);
-    var Etext= text(E,80,20);
+  
+    var E = 0;
+    
+    draw= function() {
+        background(255, 255, 255);
+        
+    //gráfica
+    strokeWeight(2);//ejes
+    line(50, 350, 350, 350);//lenght
+    line(50, 350, 50, 50);//time
+    //La función "marker" pone los marcadores de longitud en función de un "x" que le demos
+    var marker=function (x){
+        strokeWeight(1);//markers
+      line(x, 340, x, 360);//lenght markers
+    };// marker
+    //La función "markerTime" pone los marcadores de tiempo en función de un "y" que le demos
+    var markerTime=function(y){
+      line(45, y, 55, y);
+    };//markerTime
+    //"drawMarkers" contiene la declaración de "marker" y "markerTime" para ponerlos en pantalla
+    var drawMarkers=function(){
+    marker(60);
+    markerTime(340);
+    marker(70);
+    markerTime(330);
+    marker(80);
+    markerTime(320);
+    marker(90);
+    markerTime(310);
+    marker(100);
+    markerTime(300);
+    marker(110);
+    markerTime(290);
+    marker(120);
+    markerTime(280);
+    marker(130);
+    markerTime(270);
+    marker(140);
+    markerTime(260);
+    marker(150);
+    markerTime(250);
+    marker(160);
+    markerTime(240);
+    marker(170);
+    markerTime(230);
+    marker(180);
+    markerTime(220);
+    marker(190);
+    markerTime(210);
+    marker(200);
+    markerTime(200);
+    marker(210);
+    markerTime(190);
+    marker(220);
+    markerTime(180);
+    marker(230);
+    markerTime(170);
+    marker(240);
+    markerTime(160);
+    marker(250);
+    markerTime(150);
+    marker(260);
+    markerTime(140);
+    marker(270);
+    markerTime(130);
+    marker(280);
+    markerTime(120);
+    marker(290);
+    markerTime(110);
+    marker(300);
+    markerTime(100);
+    marker(310);
+    markerTime(90);
+    marker(320);
+    markerTime(80);
+    marker(330);
+    markerTime(70);
+    marker(340);
+    markerTime(60);
+    marker(350);
+    markerTime(50);
+    };//draw markers
+    drawMarkers();
+    ///gráfica
+
+    //square
+    fill(18, 180, 255);
+    //La variable "mM" es "mínimo y máximo", es decir, que límita que el cuadrado pueda ser       más grande que nuestra gráfica, siendo el valor mínimo para X 50 y el máximo 350
+    var mM= constrain(mouseX, 50, 350);
+    rect(50 ,400-mM, mM-50, mM-50);
+    ///square
+
+    fill(212, 21, 21);
+    var s= createFont("serif");
+    textFont(s);
+
+    //Arista
+    text("Arista:", 300, 20);
+    //la variable "a" proporciona el valor de la arista
+    var a = mouseX-50;
+    //si la arista es mayor o igual a cero, mostrará su valor
+    if(a>=0){
+        fill(40, 25, 255);
+    text(a,340,20);
+    }//if
+    //de lo contrario en su lugar ocupará dos textos: uno diciendo que suba en X y otro           indicando que la arista no puede ser negativa
+    else {
+        fill(255, 0, 0);
+        text("¡El arista no puede ser negativa!",200,200);
+           fill(40, 25, 255);
+    text("Sube en X",340,20);
+    }//else
+    ///Arista
+    
+    //Tiempo
     fill(212,21,21);
-text("Expansión:",20,20);
-var Eelse=function(chain){
-if ((mouseY<=350 || mouseX<50 || mouseX>350) && E ===0){
-colorFill= fill(40, 25, 255);
-Etext= text(chain,80,20);
-}//if
- else if (mouseY>350 && mouseX>50 && mouseX<=350){
+    text("Tiempo:",194,40);
+    //La variable "t" proporciona el valor del tiempo
+    var t=350-mouseY;
+    //Si el tiempo es mayor o igual a cero entoces despliega su valor
+    if(t>=0){
+        fill(40, 25, 255);
+    text(t,237,40);
+    }//if
+    //De lo contrario despliega dos textos: Uno diciendo que el tiempo no puede        ser negativo y otro diciendo que suba en Y
+    else {
+        fill(255, 0, 0);
+        text("¡El tiempo no puede ser negativo!",200,220);
+        fill(40, 25, 255);
+        t= text("Sube en Y",237,40);
+    }//else
+    ///Tiempo
+    
+    //Expansión
+    //La variable "colorFill" va a indicar el color que queramos
+        var colorFill= fill(255, 255, 255);
+        //La variable "Etext" indica el valor de "E" como expansiòn
+        var Etext= text(E,80,20);
+        fill(212,21,21);
+    text("Expansión:",20,20);
+    //La variable "Eelse" acepta el argumento (chain) o (cadena) que contiene a       un if indicando que si mouse Y es menor o igual a 350 o que si mouseX es         menor a 50 o si es       mayor a 350, cualquiera de esas condiciones que se      cumpla y que además E sea estrictame-      nte igual a 0 entonces el valor       de E será (chain): un texto "Presione en el eje X la expansión que               quiera"
+    var Eelse=function(chain){
+    if ((mouseY<=350 || mouseX<50 || mouseX>350) && E ===0){
     colorFill= fill(40, 25, 255);
-    Etext= text(E,80,20);
-}//else if
-else {
-    colorFill= fill(40, 25, 255);
-    Etext= text(E,80,20);
-}
-};//Eelse
-Eelse("Presione en el eje X la expansión que quiera");
-var drawE=function(strict,e){
-if(mouseX === strict && mouseX>50){
-mouseClicked=function(){
-     if(mouseX === strict && mouseY>350 && mouseY<370){
-     E=e;
-     }//if
- };//mouseClicked
-}//if
-};//drawE
-var drawEs=function(){
-drawE(mouseX,mouseX-50);
-};//drawEs
-drawEs();
-//Arista final
-fill(255, 0, 0);
-if(mouseY<350){
-fill(212,21,21);
-text("Arista final:",300,40);
-fill(40, 25, 255);
-text(t*E+a,360,40);
-}//if
-else {
+    Etext= text(chain,80,20);
+    }//if
+    //siguiendo con la variable "Eelse", si lo anterior no se cumple, y se cumple que mouseY      es mayor a 350 y mouseX es mayor a 50 y además menor o igual a 350 entonces se mostrará      el valor predeterminado para la expansión (E) que es 0
+     else if (mouseY>350 && mouseX>50 && mouseX<=350){
+        colorFill= fill(40, 25, 255);
+        Etext= text(E,80,20);
+    }//else if
+    //Siguiendo con la var "Eelse", si nada de lo anterior se cumple entonces se mostrará el       valor predeterminado de E
+    else {
+        colorFill= fill(40, 25, 255);
+        Etext= text(E,80,20);
+    }
+    };//Eelse
+    Eelse("Presione en el eje X la expansión que quiera");
+    //En esta variable "drawE" acepta los argumentos (strict) y (e) strict indica nuestro mouseX y e indica el valor de la arista. Esta función contiene un if diciendo que si mouseX es estrictamente igual a strict (cosa que siempre es verdad) y además mouseX es mayor a 50 entonces ejecutará una función mouseClicked que contiene un if diciendo que si mouseX es estrictamente igual a strict (cosa que siempre es verdad), mouseY mayor a 350 y mouseY menor a 370 entonces E=e
+    var drawE=function(strict,e){
+    if(mouseX === strict && mouseX>50){
+    mouseClicked=function(){
+         if(mouseX === strict && mouseY>350 && mouseY<370){
+         E=e;
+         }//if
+     };//mouseClicked
+    }//if
+    };//drawE
+    //La variable "drawEs" es una función que despliega drawE constantemente para renovar el       valor de E cada que se le de click
+    var drawEs=function(){
+    drawE(mouseX,mouseX-50);
+    };//drawEs
+    drawEs();
+
+
+    //Arista final
+    fill(255, 0, 0);
+    //Este if dice que si mouseY es menor a 350 entonces devolverá la arita final, multiplic       ando tiempo por expansión y sumando la arista.
+    if(mouseY<350){
     fill(212,21,21);
-text("Arista final:",287,40);
+    text("Arista final:",300,40);
     fill(40, 25, 255);
-text("sube en Y",348,40);
-}//else
-//
-if (mouseY>350 && mouseX>50 && mouseX<=350 && E !== 0){
- fill(212,21,21);
-text("Diferencia de área:",120,20);
- fill(40, 25, 255);
- text((t*E+1)*(t*E+1)-1+(2*t*E)*(a-1),215,20);
-}//if
-else if(mouseY<350){
+    text(t*E+a,360,40);
+    }//if
+    //de lo contrario mostrará en su lugar un texto "Sube en Y" ya que no puede hacer el          cálculo con un tiempo negativo.
+    else {
+        fill(212,21,21);
+    text("Arista final:",287,40);
+        fill(40, 25, 255);
+    text("sube en Y",348,40);
+    }//else
+    ///Arista final
+
+    //Diferencia de área
+    //En este if indica que si mouseY es menor a 350 entonces mostrará el valor        de la diferencia de área
+    if(mouseY<350 && E !== 0){
+         fill(212,21,21);
+    text("Diferencia de área:",120,20);
+     fill(40, 25, 255);
+     text((t*E+1)*(t*E+1)-1+(2*t*E)*(a-1),215,20);
+    }
+     //de lo contrario else if dice que si mouseY es mayor a 350, mouseX es mayor      a 50, mouseX es menor o igual a 350 y además E es estrictamente no igual a 0      entonces en el valor de diferencia de área mostrará un texto indicando que       "suba" ya que se calcula en base en el tiempo, y el tiempo no puede ser          negativo.
+    else if (mouseY>350 && mouseX>50 && mouseX<=350 && E !== 0){
      fill(212,21,21);
-text("Diferencia de área:",120,20);
-    fill(40, 25, 255);
- text((t*E+1)*(t*E+1)-1+(2*t*E)*(a-1),215,20);
-}
+    text("Diferencia de área:",120,20);
+     fill(40, 25, 255);
+     text("Suba",221,20);
+    }//if
+    ///Diferencia de área
+
 };// draw
 
 
