@@ -20,88 +20,27 @@
         
       // Paste code from Khan Academy here:
   
-    var E = 0;
-    
+var E = 0;
+var w = 400;
+var h = 400;
+var grafic_Y = h-50;
+var grafic_X = w-50;    
     draw= function() {
         background(255, 255, 255);
         
     //gráfica
     strokeWeight(2);//ejes
-    line(50, 855, 850, 855);//lenght
-    line(50, 850, 50, 50);//time
-    //La función "marker" pone los marcadores de longitud en función de un "x" que le demos
-    var marker=function (x){
-        strokeWeight(1);//markers
-      line(x, 990, x, 1010);//lenght markers
-    };// marker
-    //La función "markerTime" pone los marcadores de tiempo en función de un "y" que le demos
-    var markerTime=function(y){
-      line(45, y, 55, y);
-    };//markerTime
-    //"drawMarkers" contiene la declaración de "marker" y "markerTime" para ponerlos en pantalla
-    var drawMarkers=function(){
-    marker(60);
-    markerTime(340);
-    marker(70);
-    markerTime(330);
-    marker(80);
-    markerTime(320);
-    marker(90);
-    markerTime(310);
-    marker(100);
-    markerTime(300);
-    marker(110);
-    markerTime(290);
-    marker(120);
-    markerTime(280);
-    marker(130);
-    markerTime(270);
-    marker(140);
-    markerTime(260);
-    marker(150);
-    markerTime(250);
-    marker(160);
-    markerTime(240);
-    marker(170);
-    markerTime(230);
-    marker(180);
-    markerTime(220);
-    marker(190);
-    markerTime(210);
-    marker(200);
-    markerTime(200);
-    marker(210);
-    markerTime(190);
-    marker(220);
-    markerTime(180);
-    marker(230);
-    markerTime(170);
-    marker(240);
-    markerTime(160);
-    marker(250);
-    markerTime(150);
-    marker(260);
-    markerTime(140);
-    marker(270);
-    markerTime(130);
-    marker(280);
-    markerTime(120);
-    marker(290);
-    markerTime(110);
-    marker(300);
-    markerTime(100);
-    marker(310);
-    markerTime(90);
-    marker(320);
-    markerTime(80);
-    marker(330);
-    markerTime(70);
-    marker(340);
-    markerTime(60);
-    marker(350);
-    markerTime(50);
-    };//draw markers
-    drawMarkers();
+	    //Estas dos lineas crean los ejes X,Y
+	 line(50, grafic_Y, grafic_X, grafic_Y);//lenght
+	 line(50, grafic_Y, 50, 50);//time
+   //Estos ciclos for son los encargados de crear los marcadores en la gráfica
+	for (var i=60; i < grafic_X+10; i+=10){
+            strokeWeight(1);//markers   
+	    line(i, grafic_Y-5, i, grafic_Y+5);//lenght markers
+		}
+	for (var j=50; j < grafic_Y; j+=10){
+	    line(45, j, 55, j);
+		}
     ///gráfica
 
     //square
