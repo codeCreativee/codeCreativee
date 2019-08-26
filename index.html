@@ -21,33 +21,35 @@
       // Paste code from Khan Academy here:
   
 var E = 0;
-var w = 400;
 var h = 400;
+var w = h;
 var grafic_Y = h-50;
 var grafic_X = w-50;    
+var starX_grafic = 50;
+var starY_grafic = [50,grafic_Y];
     draw= function() {
         background(255, 255, 255);
         
-    //gráfica
-    strokeWeight(2);//ejes
-	    //Estas dos lineas crean los ejes X,Y
-	 line(50, grafic_Y, grafic_X, grafic_Y);//lenght
-	 line(50, grafic_Y, 50, 50);//time
+   //gráfica
+      strokeWeight(2);//ejes
+   //Estas dos lineas crean los ejes X,Y
+	   line(starX_grafic, starY_grafic[1], grafic_X, grafic_Y);//lenght
+	    line(starX_grafic, grafic_Y, starX_grafic, starY_grafic[0]);//time
    //Estos ciclos for son los encargados de crear los marcadores en la gráfica
 	for (var i=60; i < grafic_X+10; i+=10){
             strokeWeight(1);//markers   
 	    line(i, grafic_Y-5, i, grafic_Y+5);//lenght markers
 		}
-	for (var j=50; j < grafic_Y; j+=10){
+	for (var j = starY_grafic; j < grafic_Y; j+=10){
 	    line(45, j, 55, j);
-		}
+	}
     ///gráfica
 
     //square
     fill(18, 180, 255);
-    //La variable "mM" es "mínimo y máximo", es decir, que límita que el cuadrado pueda ser más grande que nuestra gráfica, siendo el valor mínimo para X 50 y el máximo 350
-    var mM= constrain(mouseX, 50, 850);
-    rect(50 ,900-mM, mM-50, mM-50);
+    //La variable "mM" es "mínimo y máximo", es decir, que límita que el cuadrado pueda ser más grande que nuestra gráfica, siendo el valor mínimo para X 50 y el máximo grafic_X
+    var mM= constrain(mouseX, 50, grafic_X);
+    rect(50 ,h-mM, mM-50, mM-50);
     ///square
 
     fill(212, 21, 21);
@@ -55,13 +57,13 @@ var grafic_X = w-50;
     textFont(s);
 
     //Arista
-    text("Arista:", 400, 20);
+    text("Arista:", grafic_Y-25, starX_grafic-30);
     //la variable "a" proporciona el valor de la arista
     var a = mouseX-50;
     //si la arista es mayor o igual a cero, mostrará su valor
     if(a>=0){
         fill(40, 25, 255);
-    text(a,455,20);
+    text(a, grafic_Y+10 ,starX_grafic-30);
     }//if
     //de lo contrario en su lugar ocupará dos textos: uno diciendo que suba en X y otro indicando que la arista no puede ser negativa
     else {
