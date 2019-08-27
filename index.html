@@ -1,10 +1,16 @@
-# Gasha
 <!DOCTYPE html>
 <html> 
   <head>
-    <title>Calcula diferencia de área</title> 
+    <title>Página diferencia de área </title> 
   </head>
+  <style>
+      #errorText {
+          position:relative;
+          color:white;
+      }
+  </style>
   <body>
+  <p> <span id="errorText">¡El arista no puede ser negativa!</span> </p>
 	<!--This draws the canvas on the webpage -->
     <canvas id="mycanvas"></canvas> 
   </body>
@@ -15,11 +21,10 @@
   <script>
   var programCode = function(processingInstance) {
     with (processingInstance) {
-      size(400,400 ); 
+      size(400, 400); 
       frameRate(30);
         
       // Paste code from Khan Academy here:
-  
 var E = 0;
 var h = 400;
 var w = h;
@@ -36,28 +41,28 @@ var starY_grafic = [50,grafic_Y];
 	   line(starX_grafic, starY_grafic[1], grafic_X, grafic_Y);//lenght
 	    line(starX_grafic, grafic_Y, starX_grafic, starY_grafic[0]);//time
    //Estos ciclos for son los encargados de crear los marcadores en la gráfica
-	for (var i=60; i < grafic_X+10; i+=10){
+	for (var i=starX_grafic+10; i < grafic_X+10; i+=10) {
             strokeWeight(1);//markers   
 	    line(i, grafic_Y-5, i, grafic_Y+5);//lenght markers
-		}
-	for (var j = starY_grafic; j < grafic_Y; j+=10){
-	    line(45, j, 55, j);
-	}
+		};
+	for (var j = starY_grafic; j < grafic_Y; j+=10) {
+	    line(45, j, 55, j);//time markers
+	};
     ///gráfica
-
+    
     //square
     fill(18, 180, 255);
     //La variable "mM" es "mínimo y máximo", es decir, que límita que el cuadrado pueda ser más grande que nuestra gráfica, siendo el valor mínimo para X 50 y el máximo grafic_X
     var mM= constrain(mouseX, 50, grafic_X);
     rect(50 ,h-mM, mM-50, mM-50);
     ///square
-
+    
     fill(212, 21, 21);
     var s= createFont("serif");
     textFont(s);
-
+    
     //Arista
-    text("Arista:", grafic_Y-25, starX_grafic-30);
+    text("Arista:", grafic_X-25, starY_grafic[0]-30);
     //la variable "a" proporciona el valor de la arista
     var a = mouseX-50;
     //si la arista es mayor o igual a cero, mostrará su valor
@@ -65,34 +70,26 @@ var starY_grafic = [50,grafic_Y];
         fill(40, 25, 255);
     text(a, grafic_Y+10 ,starX_grafic-30);
     }//if
-    //de lo contrario en su lugar ocupará dos textos: uno diciendo que suba en X y otro indicando que la arista no puede ser negativa
+    //de lo contrario no hará nada
     else {
-        fill(255, 0, 0);
-        text("¡El arista no puede ser negativa!",500,500);
-           fill(40, 25, 255);
-    text("Sube en X",455,20);
     }//else
     ///Arista
     
-    //Tiempo
+     //Tiempo
     fill(212,21,21);
-    text("Tiempo:",194,40);
+    text("Tiempo:",starX_grafic+150,starY_grafic[0]-10);
     //La variable "t" proporciona el valor del tiempo
-    var t=850-mouseY;
+    var t=h+10-mouseY;
     //Si el tiempo es mayor o igual a cero entoces despliega su valor
     if(t>=0){
         fill(40, 25, 255);
-    text(t,250,40);
+    text(t,starX_grafic+200,starY_grafic[0]-10);
     }//if
-    //De lo contrario despliega dos textos: Uno diciendo que el tiempo no puede        ser negativo y otro diciendo que suba en Y
+    //De lo contrario no despliega nada
     else {
-        fill(255, 0, 0);
-        text("¡El tiempo no puede ser negativo!",200,220);
-        fill(40, 25, 255);
-        t= text("Sube en Y",237,40);
     }//else
     ///Tiempo
-    
+	    
     //Expansión
     //La variable "colorFill" va a indicar el color que queramos
         var colorFill= fill(255, 255, 255);
