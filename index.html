@@ -135,35 +135,29 @@ var starY_grafic = [50,grafic_Y];
     //Arista final
     fill(255, 0, 0);
     //Este if dice que si mouseY es menor a 850 entonces devolverá la arita final, multiplicando tiempo por expansión y sumando la arista.
-    if(mouseY<850){
+    if(mouseY<starY_grafic[1]){
     fill(212,21,21);
     text("Arista final:",400,40);
     fill(40, 25, 255);
     text(t*E+a,470,40);
     }//if
-    //de lo contrario mostrará en su lugar un texto "Sube en Y" ya que no puede hacer el cálculo con un tiempo negativo.
+    //de lo contrario mostrará nada
     else {
-        fill(212,21,21);
-    text("Arista final:",400,40);
-        fill(40, 25, 255);
-    text("sube en Y",460,40);
     }//else
     ///Arista final
 
     //Diferencia de área
     //En este if indica que si mouseY es menor a 350 entonces mostrará el valor de la diferencia de área
-    if(mouseY<850 && E !== 0){
+    if(mouseY<starY_grafic[1] && E !== 0){
          fill(212,21,21);
     text("Diferencia de área:",120,20);
      fill(40, 25, 255);
      text((t*E+1)*(t*E+1)-1+(2*t*E)*(a-1),215,20);
     }
-     //de lo contrario else if dice que si mouseY es mayor a 350, mouseX es mayor a 50, mouseX es menor o igual a 350 y además E es estrictamente no igual a 0      entonces en el valor de diferencia de área mostrará un texto indicando que       "suba" ya que se calcula en base en el tiempo, y el tiempo no puede ser          negativo.
-    else if (mouseY>850 && mouseX>50 && mouseX<=800 && E !== 0){
+     //de lo contrario no hará nada
+    else if (mouseY>starY_grafic[1] && mouseX>starX_grafic && mouseX<=grafic_X && E !== 0){
      fill(212,21,21);
     text("Diferencia de área:",120,20);
-     fill(40, 25, 255);
-     text("Suba",221,20);
     }//if
     ///Diferencia de área
 
