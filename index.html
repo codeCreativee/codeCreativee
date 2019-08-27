@@ -99,12 +99,12 @@ var starY_grafic = [50,grafic_Y];
     text("Expansión:",20,20);
     //La variable "Eelse" acepta el argumento (chain) o (cadena) que contiene a un if indicando que si mouse Y es menor o igual a 350 o que si mouseX es         menor a 50 o si es       mayor a 350, cualquiera de esas condiciones que se      cumpla y que además E sea estrictame-      nte igual a 0 entonces el valor       de E será (chain): un texto "Presione en el eje X la expansión que               quiera"
     var Eelse=function(chain){
-    if ((mouseY<=850 || mouseX<50 || mouseX>850) && E ===0){
+    if ((mouseY<=h-50 || mouseX<starX_grafic || mouseX>grafic_X) && E ===0){
     colorFill= fill(40, 25, 255);
     Etext= text(chain,85,20);
     }//if
     //siguiendo con la variable "Eelse", si lo anterior no se cumple, y se cumple que mouseY es mayor a 850 y mouseX es mayor a 50 y además menor o igual a 850 entonces se mostrará      el valor predeterminado para la expansión (E) que es 0
-     else if (mouseY>850 && mouseX>50 && mouseX<=850){
+     else if (mouseY>h-50 && mouseX>starX_grafic && mouseX<=grafic_X){
         colorFill= fill(40, 25, 255);
         Etext= text(E,80,20);
     }//else if
@@ -117,9 +117,9 @@ var starY_grafic = [50,grafic_Y];
     Eelse("Presione en el eje X la expansión que quiera");
     //En esta variable "drawE" acepta los argumentos (strict) y (e) strict indica nuestro mouseX y e indica el valor de la arista. Esta función contiene un if diciendo que si mouseX es estrictamente igual a strict (cosa que siempre es verdad) y además mouseX es mayor a 50 entonces ejecutará una función mouseClicked que contiene un if diciendo que si mouseX es estrictamente igual a strict (cosa que siempre es verdad), mouseY mayor a 350 y mouseY menor a 370 entonces E=e
     var drawE=function(strict,e){
-    if(mouseX === strict && mouseX>50){
+    if(mouseX === strict && mouseX>starX_grafic){
     mouseClicked=function(){
-         if(mouseX === strict && mouseY>850 && mouseY<870){
+         if(mouseX === strict && mouseY>starY_grafic[1] && mouseY<starY_grafic[1]+20){
          E=e;
          }//if
      };//mouseClicked
@@ -127,7 +127,7 @@ var starY_grafic = [50,grafic_Y];
     };//drawE
     //La variable "drawEs" es una función que despliega drawE constantemente para renovar el valor de E cada que se le de click
     var drawEs=function(){
-    drawE(mouseX,mouseX-50);
+    drawE(mouseX,mouseX-starX_grafic);
     };//drawEs
     drawEs();
 
