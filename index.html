@@ -7,7 +7,7 @@
      h1{
 	     position:relative;
 	     left:100px;
-	     bottom:50px;
+	     bottom:70px;
 	  }	
   </style>
   <body>
@@ -136,10 +136,10 @@ var starY_grafic = [50,grafic_Y];
 
     //Arista final
     fill(255, 0, 0);
+    text("Arista final:",grafic_X-50, starY_grafic[0]-15);
     //Este if dice que si mouseY es menor a 850 entonces devolverá la arita final, multiplicando tiempo por expansión y sumando la arista.
     if(mouseY<=starY_grafic[1]){
     fill(212,21,21);
-    text("Arista final:",grafic_X-50, starY_grafic[0]-15);
     fill(40, 25, 255);
     text(t*E+a,grafic_X+10, starY_grafic[0]-15);
     }//if
