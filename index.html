@@ -10,7 +10,6 @@
 	     top:20px;
 	     font-size:5em;
 	     color: rgb(133,0,0);
-	     background-color:black;
 	  }	
   </style>
   <body>
@@ -29,6 +28,7 @@
       frameRate(30);
         
       // Paste code from Khan Academy here:
+	    
 	
 var E = 0;
 var h = 750;
@@ -37,6 +37,10 @@ var grafic_Y = h-50;
 var grafic_X = w-50;    
 var starX_grafic = 50;
 var starY_grafic = [50,grafic_Y];
+	    //Guía
+	    fill(0,0,0);
+	    rec(starX_grafic,starY_grafic[0],grafic_X,grafic_Y);
+		
     draw= function() {
         background(255, 255, 255);
         
