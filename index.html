@@ -29,15 +29,15 @@ var grafic_Y = h-50;
 var grafic_X = w-50;    
 var starX_grafic = 50;
 var starY_grafic = [50,grafic_Y];
-	    //Guía
+	  
+    draw= function() {
+        background(255, 255, 255);
+	      //Guía
 	    fill(0,0,0);
 	    rect(starX_grafic,starY_grafic[0],grafic_X,grafic_Y);
 	    fill(133,0,0);
 	    text("¿Qué es esto?",starX_grafic+100,starY_grafic[0]+30);
-		
-    draw= function() {
-        background(255, 255, 255);
-        
+              ///Guía
    //gráfica
       strokeWeight(2);//ejes
    //Estas dos lineas crean los ejes X,Y
