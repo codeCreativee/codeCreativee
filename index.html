@@ -3,17 +3,9 @@
   <head>
     <title>Calcula diferencia de área </title> 
   </head>
-  <style>
-     h1{
-	     position:relative;
-	     left:600px;
-	     top:20px;
-	     font-size:5em;
-	     color: rgb(133,0,0);
-	  }	
+  <style>	
   </style>
   <body>
-	  <h1> ¿Qué es esto? </h1>
 	<!--This draws the canvas on the webpage -->
     <canvas id="mycanvas"></canvas> 
   </body>
@@ -40,6 +32,8 @@ var starY_grafic = [50,grafic_Y];
 	    //Guía
 	    fill(0,0,0);
 	    rec(starX_grafic,starY_grafic[0],grafic_X,grafic_Y);
+	    fill(133,0,0);
+	    text("¿Qué es esto?",starX_grafic+100,starY_grafic[0]+30);
 		
     draw= function() {
         background(255, 255, 255);
