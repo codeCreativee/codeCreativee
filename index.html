@@ -6,8 +6,8 @@
   <style>	
 	  #ok{
 		  position:relative;
-		  bottom:520px;
-		  right:140px;
+		  bottom:530px;
+		  right:150px;
 	  }
   </style>
   <body>
@@ -49,6 +49,12 @@ var starY_grafic = [50,grafic_Y];
 	    text("Este es un programa donde dados los datos de <tiempo>, <expansión> y",starX_grafic+20,starY_grafic[0]+80);
 	    text("<arista> devuelve información como la arista final y la diferencia",starX_grafic+20,starY_grafic[0]+105);
 	    text("entre esa arista final con la arista inicial",starX_grafic+20,starY_grafic[0]+130);
+	    
+	    var two = function(){
+		    text("¡Si funciona!",400,400);
+	    }
+	    var pageTwo = document.getElementById("ok");
+	    pageTwo.addEventListener("click",two);
               ///Guía
    //gráfica
 	    textSize(12);
