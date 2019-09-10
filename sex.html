@@ -1,204 +1,187 @@
 <!DOCTYPE html>
-<head>
-    <title>Ingreso a la biblioteca</title>
-</head>
-<body>
-
-    <form action="" id = "centrado"  method="get" name = "formulario">
-
-        <h1>Registra tus datos</h1>
-        <link rel="stylesheet" href="web.css">
-     
-
-        <div class="validar">
-        <label for="" name = "nombre">Nombre</label>
-        <input type="text" name = "nombre">
-        </div>
-
-        <div>
-        <label for="" class="espaciado" name = "edad">Edad</label>
-        <input type="number" name = "edad">
-        </div>
-
-        <div>
-        <label for="" name = "sexo">Sexo</label>
-        <select name="sexo">
-            <option>Hombre</option>
-            <option>Mujer</option>>
-        </select>
-        </div>
-
-
-        <h3>Escolaridad</h3>
-
-        <div>
-        <input type="checkbox" name = "escol">
-        <label for="" >Primaria</label>
-        </div>
-
-        <div>
-        <input type="checkbox" name = "escol">
-        <label for="" >Secundaria</label>
-        </div>
-
-        <div>
-        <input type="checkbox" name = "escol">
-        <label for="" >Preparatoria</label>
-        </div>
-
-         <div>
-        <input type="checkbox" name = "escol">
-        <label for="" >Licienciatura</label>
-         </div>
-
-        <div>
-        <input type="checkbox" name = "escol">
-        <label for="" >Posgrado</label>
-        </div>
-
-        <input type="submit" id = "enviar">
-   
-    </form>
-
-
-    <script>
-   
-        var mes = new Date();
-        document.write(mes.getMonth()+1 + "/");
-
-        var dia = new Date();
-        document.write(dia.getDate() + "/");
-
-        var año = new Date();
-        document.write(año.getFullYear());
-
-        var hora = new Date();
-        document.write("    " + hora.getHours())
-
-        var minutos = new Date();
-        document.write(":" + minutos.getMinutes())
-
-      (function(){
-           var formulario = document.getElementsByName("formulario")[0],
-             elementos = formulario.elements,
-             boton = document.getElementById("enviar")
-             var validarNombre = function(e){
-                if(formulario.nombre.value == 0){
-                alert("Ingresa tu nombre por favor")
-                }
-                e.preventDefault();
-             };
-             var validarEdad = function(e){
-                if(formulario.edad.value <= 0){
-                    alert("Ingresa tu edad por favor")
-                }
-                e.preventDefault();
-             }
-
-             var validarEscolaridad = function(e){
-               
-                //Dos escolaridades seleccionadas
-                if(formulario.escol[0].checked == true && formulario.escol[1].checked == true){
-                    alert("Selecciona sólo un nivel de estudios")
-                }
-                else if(formulario.escol[0].checked == true && formulario.escol[2].checked == true){
-                    alert("Selecciona sólo un nivel de estudios")
-                }
-                else if(formulario.escol[0].checked == true && formulario.escol[3].checked == true){
-                    alert("Selecciona sólo un nivel de estudios")
-                }
-                else if(formulario.escol[0].checked == true && formulario.escol[4].checked == true){
-                    alert("Selecciona sólo un nivel de estudios")
-                }
-                else if(formulario.escol[1].checked == true && formulario.escol[2].checked == true){
-                    alert("Selecciona sólo un nivel de estudios")
-                }
-                else if(formulario.escol[1].checked == true && formulario.escol[3].checked == true){
-                    alert("Selecciona sólo un nivel de estudios")
-                }
-                else if(formulario.escol[1].checked == true && formulario.escol[4].checked == true){
-                    alert("Selecciona sólo un nivel de estudios")
-                }
-                else if(formulario.escol[2].checked == true && formulario.escol[3].checked == true){
-                    alert("Selecciona sólo un nivel de estudios")
-                }
-                else if(formulario.escol[2].checked == true && formulario.escol[4].checked == true){
-                    alert("Selecciona sólo un nivel de estudios")
-                }
-                else if(formulario.escol[3].checked == true && formulario.escol[4].checked == true){
-                    alert("Selecciona sólo un nivel de estudios")
-                }
-                 //tres escolaridades seleccionadas
-                else if(formulario.escol[0].checked == true && formulario.escol[1].checked == true && formulario.escol[2].checked == true ){
-                    alert("Selecciona sólo un nivel de estudios")
-                }
-                else if(formulario.escol[0].checked == true && formulario.escol[1].checked == true && formulario.escol[3].checked == true ){
-                    alert("Selecciona sólo un nivel de estudios")
-                }
-                else if(formulario.escol[0].checked == true && formulario.escol[1].checked == true && formulario.escol[4].checked == true ){
-                    alert("Selecciona sólo un nivel de estudios")
-                }
-                else if(formulario.escol[0].checked == true && formulario.escol[2].checked == true && formulario.escol[3].checked == true ){
-                    alert("Selecciona sólo un nivel de estudios")
-                }
-                else if(formulario.escol[0].checked == true && formulario.escol[2].checked == true && formulario.escol[4].checked == true ){
-                    alert("Selecciona sólo un nivel de estudios")
-                }
-                else if(formulario.escol[0].checked == true && formulario.escol[3].checked == true && formulario.escol[4].checked == true ){
-                    alert("Selecciona sólo un nivel de estudios")
-                }
-                else if(formulario.escol[1].checked == true && formulario.escol[2].checked == true && formulario.escol[3].checked == true ){
-                    alert("Selecciona sólo un nivel de estudios")
-                }
-                else if(formulario.escol[1].checked == true && formulario.escol[2].checked == true && formulario.escol[4].checked == true ){
-                    alert("Selecciona sólo un nivel de estudios")
-                }
-                else if(formulario.escol[1].checked == true && formulario.escol[3].checked == true && formulario.escol[4].checked == true ){
-                    alert("Selecciona sólo un nivel de estudios")
-                }
-                else if(formulario.escol[2].checked == true && formulario.escol[3].checked == true && formulario.escol[4].checked == true ){
-                    alert("Selecciona sólo un nivel de estudios")
-                }
-                //cuatro escolaridades seleccionadas
-                else if(formulario.escol[0].checked == true && formulario.escol[1].checked == true && formulario.escol[2].checked == true && formulario.escol[3].checked == true){
-                    alert("Selecciona sólo un nivel de estudios")
-                }
-                else if(formulario.escol[0].checked == true && formulario.escol[1].checked == true && formulario.escol[2].checked == true && formulario.escol[4].checked == true){
-                    alert("Selecciona sólo un nivel de estudios")
-                }
-                else if(formulario.escol[0].checked == true && formulario.escol[1].checked == true && formulario.escol[3].checked == true && formulario.escol[4].checked == true){
-                    alert("Selecciona sólo un nivel de estudios")
-                }
-                else if(formulario.escol[0].checked == true && formulario.escol[2].checked == true && formulario.escol[3].checked == true && formulario.escol[4].checked == true){
-                    alert("Selecciona sólo un nivel de estudios")
-                }
-                else if(formulario.escol[1].checked == true && formulario.escol[2].checked == true && formulario.escol[3].checked == true && formulario.escol[4].checked == true){
-                    alert("Selecciona sólo un nivel de estudios")
-                }
-                // Todas las escolaridades seleccionadas
-                else if(formulario.escol[0].checked == true && formulario.escol[1].checked == true && formulario.escol[2].checked == true && formulario.escol[3].checked == true && formulario.escol[4].checked == true){
-                    alert("Selecciona sólo un nivel de estudios")
-                }
-                //ninguna escolaridad seleccionada
-                else if(formulario.escol[0].checked == false || formulario.escol[1].checked == false || formulario.escol[2].checked == false || formulario.escol[3].checked == false || formulario.escol[4].checked == false){
-                    alert("Escoge tu nivel de estudios por favor")
-                }
-                //Una selección
-                else{
-
-                }
-                e.preventDefault();
-             }
-
-             var validar = function(e){
-                validarNombre(e);
-                validarEdad(e);
-                validarEscolaridad(e);
-            };
-
-            formulario.addEventListener("submit", validar);
-      }())
-   
-    </script>
-
-</body>
+<html> 
+  <head>
+    <title>Calcula diferencia de área </title> 
+  </head>
+  <style>	
+	  #ok{
+		  position:relative;
+		  bottom:530px;
+		  right:150px;
+	  }
+  </style>
+  <body>
+	<!--This draws the canvas on the webpage -->
+    <canvas id="mycanvas"></canvas> 
+	  <button id="ok" type="button">Ok</button>
+  </body>
+ 
+  <!-- Include the processing.js library -->
+  <!-- See https://khanacademy.zendesk.com/hc/en-us/articles/202260404-What-parts-of-ProcessingJS-does-Khan-Academy-support- for differences -->
+  <script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script> 
+  <script>
+  var programCode = function(processingInstance) {
+    with (processingInstance) {
+      size(750, 750); 
+      frameRate(30);
+        
+      // Paste code from Khan Academy here:
+	    
+	
+var E = 0;
+var h = 750;
+var w = h;
+var grafic_Y = h-50;
+var grafic_X = w-50;    
+var starX_grafic = 50;
+var starY_grafic = [50,grafic_Y];
+	  
+    draw= function() {
+        background(255, 255, 255);
+	      //Guía
+	    fill(0,0,0);
+	    rect(starX_grafic,starY_grafic[0],grafic_X-starX_grafic,starY_grafic[0]+150);
+	    fill(133,0,0);
+	    textSize(40);
+	    text("¿Qué es esto?",starX_grafic+215,starY_grafic[0]+30);
+	    textSize(20);
+	    fill(225,225,225);
+	    text("Este es un programa donde dados los datos de <tiempo>, <expansión> y",starX_grafic+20,starY_grafic[0]+80);
+	    text("<arista> devuelve información como la arista final y la diferencia",starX_grafic+20,starY_grafic[0]+105);
+	    text("entre esa arista final con la arista inicial",starX_grafic+20,starY_grafic[0]+130);
+	    
+	    var two = function(){
+		    text("¡Si funciona!",400,400);
+	    }
+	    var pageTwo = document.getElementById("ok");
+	    pageTwo.addEventListener("click",two);
+              ///Guía
+   //gráfica
+	    textSize(12);
+      strokeWeight(2);//ejes
+   //Estas dos lineas crean los ejes X,Y
+	   line(starX_grafic, starY_grafic[1], grafic_X, grafic_Y);//lenght
+	    line(starX_grafic, grafic_Y, starX_grafic, starY_grafic[0]);//time
+   //Estos ciclos for son los encargados de crear los marcadores en la gráfica
+	for (var i=starX_grafic+10; i < grafic_X+10; i+=10) {
+            strokeWeight(1);//markers   
+	    line(i, grafic_Y-5, i, grafic_Y+5);//lenght markers
+		};
+	for (var j = starY_grafic; j < grafic_Y; j+=10) {
+	    line(45, j, 55, j);//time markers
+	};
+    ///gráfica
+    
+    //square
+    fill(18, 180, 255);
+    //La variable "mM" es "mínimo y máximo", es decir, que límita que el cuadrado pueda ser más grande que nuestra gráfica, siendo el valor mínimo para X 50 y el máximo grafic_X
+    var mM= constrain(mouseX, 50, grafic_X);
+    rect(50 ,h-mM, mM-50, mM-50);
+    ///square
+    
+    fill(212, 21, 21);
+    var s= createFont("serif");
+    textFont(s);
+    
+    //Arista
+    text("Arista:", grafic_X-25, starY_grafic[0]-30);
+    //la variable "a" proporciona el valor de la arista
+    var a = mouseX-50;
+    //si la arista es mayor o igual a cero, mostrará su valor
+    if(a>=0){
+        fill(40, 25, 255);
+    text(a, grafic_Y+10 ,starX_grafic-30);
+    }//if
+    //de lo contrario no hará nada
+    else {
+    }//else
+    ///Arista
+    
+     //Tiempo
+    fill(212,21,21);
+    text("Tiempo:",starX_grafic+150,starY_grafic[0]-10);
+    //La variable "t" proporciona el valor del tiempo
+    var t=grafic_Y-mouseY;
+    //Si el tiempo es mayor o igual a cero entoces despliega su valor
+    if(t>=0){
+        fill(40, 25, 255);
+    text(t,starX_grafic+200,starY_grafic[0]-10);
+    }//if
+    //De lo contrario no despliega nada
+    else {
+    }//else
+    ///Tiempo
+	    
+    //Expansión
+    //La variable "colorFill" va a indicar el color que queramos
+        var colorFill= fill(255, 255, 255);
+        //La variable "Etext" indica el valor de "E" como expansiòn
+        var Etext= text(E,80,20);
+        fill(212,21,21);
+    text("Expansión:",20,20);
+    //La variable "Eelse" acepta el argumento (chain) o (cadena) que contiene a un if indicando que si mouse Y es menor o igual a 350 o que si mouseX es         menor a 50 o si es       mayor a 350, cualquiera de esas condiciones que se      cumpla y que además E sea estrictame-      nte igual a 0 entonces el valor       de E será (chain): un texto "Presione en el eje X la expansión que               quiera"
+    var Eelse=function(chain){
+    if ((mouseY<=h-50 || mouseX<starX_grafic || mouseX>grafic_X) && E ===0){
+    colorFill= fill(40, 25, 255);
+    Etext= text(chain,85,20);
+    }//if
+    //siguiendo con la variable "Eelse", si lo anterior no se cumple, y se cumple que mouseY es mayor a 850 y mouseX es mayor a 50 y además menor o igual a 850 entonces se mostrará      el valor predeterminado para la expansión (E) que es 0
+     else if (mouseY>h-50 && mouseX>starX_grafic && mouseX<=grafic_X){
+        colorFill= fill(40, 25, 255);
+        Etext= text(E,80,20);
+    }//else if
+    //Siguiendo con la var "Eelse", si nada de lo anterior se cumple entonces se mostrará el valor predeterminado de E
+    else {
+        colorFill= fill(40, 25, 255);
+        Etext= text(E,80,20);
+    }
+    };//Eelse
+    Eelse("Presione en el eje X la expansión que quiera");
+    //En esta variable "drawE" acepta los argumentos (strict) y (e) strict indica nuestro mouseX y e indica el valor de la arista. Esta función contiene un if diciendo que si mouseX es estrictamente igual a strict (cosa que siempre es verdad) y además mouseX es mayor a 50 entonces ejecutará una función mouseClicked que contiene un if diciendo que si mouseX es estrictamente igual a strict (cosa que siempre es verdad), mouseY mayor a 350 y mouseY menor a 370 entonces E=e
+    var drawE=function(strict,e){
+    if(mouseX === strict && mouseX>starX_grafic){
+    mouseClicked=function(){
+         if(mouseX === strict && mouseY>starY_grafic[1] && mouseY<starY_grafic[1]+20){
+         E=e;
+         }//if
+     };//mouseClicked
+    }//if
+    };//drawE
+    //La variable "drawEs" es una función que despliega drawE constantemente para renovar el valor de E cada que se le de click
+    var drawEs=function(){
+    drawE(mouseX,mouseX-starX_grafic);
+    };//drawEs
+    drawEs();
+    //Arista final
+    fill(255, 0, 0);
+    text("Arista final:",grafic_X-50, starY_grafic[0]-15);
+    //Este if dice que si mouseY es menor a 850 entonces devolverá la arita final, multiplicando tiempo por expansión y sumando la arista.
+    if(mouseY<=starY_grafic[1]){
+    fill(212,21,21);
+    fill(40, 25, 255);
+    text(t*E+a,grafic_X+10, starY_grafic[0]-15);
+    }//if
+    //de lo contrario mostrará nada
+    else {
+    }//else
+    ///Arista final
+    //Diferencia de área
+    //En este if indica que si mouseY es menor a 350 entonces mostrará el valor de la diferencia de área
+    if(mouseY<=starY_grafic[1] && E !== 0){
+         fill(212,21,21);
+    text("Diferencia de área:",120,20);
+     fill(40, 25, 255);
+     text((t*E+1)*(t*E+1)-1+(2*t*E)*(a-1),215,20);
+    }
+     //de lo contrario no hará nada
+    else {
+    }//if
+    ///Diferencia de área
+};// draw
+    }};
+  // Get the canvas that ProcessingJS will use
+  var canvas = document.getElementById("mycanvas"); 
+  // Pass the function to ProcessingJS constructor
+  var processingInstance = new Processing(canvas, programCode); 
+  </script>
+</html>
