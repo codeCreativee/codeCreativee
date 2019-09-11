@@ -2,12 +2,12 @@
 <html>
 <head>
     <title>Ingreso a la biblioteca</title>
+    
 </head>
     <style>
         body{
     background: #f7f1e3
 }
-
 h1,h3,#centrado{
     text-align: center;
 }
@@ -21,13 +21,14 @@ form{
     margin-bottom: 310px;
 }
     </style>
-<body>
+       <link rel="stylesheet" href="web.css">
+   <body>
 
     <form action="" id = "centrado"  method="get" name = "formulario">
 
         <h1>Registra tus datos</h1>
-        <link rel="stylesheet" href="web.css">
-     
+        
+        
 
         <div class="validar">
         <label for="" name = "nombre">Nombre</label>
@@ -49,54 +50,57 @@ form{
 
 
         <h3>Escolaridad</h3>
-
+        <!--    0    -->
+        <div>
+            <input type="checkbox" name = "escol">
+            <label for="">Personas con discapacidad</label>
+        </div>
+        <!--    1    -->
+        <div>
+            <input type="checkbox" name = "escol">
+            <label for="">Preescolar</label>
+        </div>
+        <!--    2    -->
         <div>
         <input type="checkbox" name = "escol">
         <label for="" >Primaria</label>
         </div>
-
+        <!--    3    -->
         <div>
         <input type="checkbox" name = "escol">
         <label for="" >Secundaria</label>
         </div>
-
+        <!--    4    -->
         <div>
         <input type="checkbox" name = "escol">
         <label for="" >Preparatoria</label>
         </div>
-
+        <!--    5    -->
          <div>
         <input type="checkbox" name = "escol">
         <label for="" >Licienciatura</label>
          </div>
-
+         <!--    6    -->
         <div>
         <input type="checkbox" name = "escol">
         <label for="" >Posgrado</label>
         </div>
 
         <input type="submit" id = "enviar">
-   
     </form>
-
-
-    <script>
-   
-        var mes = new Date();
+    
+   </body>
+   <script>
+       var mes = new Date();
         document.write(mes.getMonth()+1 + "/");
-
         var dia = new Date();
         document.write(dia.getDate() + "/");
-
         var año = new Date();
         document.write(año.getFullYear());
-
         var hora = new Date();
         document.write("    " + hora.getHours())
-
         var minutos = new Date();
         document.write(":" + minutos.getMinutes())
-
       (function(){
            var formulario = document.getElementsByName("formulario")[0],
              elementos = formulario.elements,
@@ -113,23 +117,10 @@ form{
                 }
                 e.preventDefault();
              }
-
              var validarEscolaridad = function(e){
                
                 //Dos escolaridades seleccionadas
-                if(formulario.escol[0].checked == true && formulario.escol[1].checked == true){
-                    alert("Selecciona sólo un nivel de estudios")
-                }
-                else if(formulario.escol[0].checked == true && formulario.escol[2].checked == true){
-                    alert("Selecciona sólo un nivel de estudios")
-                }
-                else if(formulario.escol[0].checked == true && formulario.escol[3].checked == true){
-                    alert("Selecciona sólo un nivel de estudios")
-                }
-                else if(formulario.escol[0].checked == true && formulario.escol[4].checked == true){
-                    alert("Selecciona sólo un nivel de estudios")
-                }
-                else if(formulario.escol[1].checked == true && formulario.escol[2].checked == true){
+                if(formulario.escol[1].checked == true && formulario.escol[2].checked == true){
                     alert("Selecciona sólo un nivel de estudios")
                 }
                 else if(formulario.escol[1].checked == true && formulario.escol[3].checked == true){
@@ -138,84 +129,149 @@ form{
                 else if(formulario.escol[1].checked == true && formulario.escol[4].checked == true){
                     alert("Selecciona sólo un nivel de estudios")
                 }
+                else if(formulario.escol[1].checked == true && formulario.escol[5].checked == true){
+                    alert("Selecciona sólo un nivel de estudios")
+                }
+                else if(formulario.escol[1].checked == true && formulario.escol[6].checked == true){
+                    alert("Selecciona sólo un nivel de estudios")  
+                }
                 else if(formulario.escol[2].checked == true && formulario.escol[3].checked == true){
                     alert("Selecciona sólo un nivel de estudios")
                 }
                 else if(formulario.escol[2].checked == true && formulario.escol[4].checked == true){
                     alert("Selecciona sólo un nivel de estudios")
                 }
+                else if(formulario.escol[2].checked == true && formulario.escol[5].checked == true){
+                    alert("Selecciona sólo un nivel de estudios")
+                }
+                else if(formulario.escol[2].checked == true && formulario.escol[6].checked == true){
+                    alert("Selecciona sólo un nivel de estudios")
+                }
                 else if(formulario.escol[3].checked == true && formulario.escol[4].checked == true){
                     alert("Selecciona sólo un nivel de estudios")
                 }
+                else if(formulario.escol[3].checked == true && formulario.escol[5].checked == true){
+                    alert("Selecciona sólo un nivel de estudios")
+                }
+                else if(formulario.escol[3].checked == true && formulario.escol[6].checked == true){
+                    alert("Selecciona sólo un nivel de estudios")
+                }
+                else if(formulario.escol[4].checked == true && formulario.escol[5].checked == true){
+                    alert("Selecciona sólo un nivel de estudios")
+                }
+                else if(formulario.escol[4].checked == true && formulario.escol[6].checked == true){
+                    alert("Selecciona sólo un nivel de estudios")
+                }
                  //tres escolaridades seleccionadas
-                else if(formulario.escol[0].checked == true && formulario.escol[1].checked == true && formulario.escol[2].checked == true ){
-                    alert("Selecciona sólo un nivel de estudios")
-                }
-                else if(formulario.escol[0].checked == true && formulario.escol[1].checked == true && formulario.escol[3].checked == true ){
-                    alert("Selecciona sólo un nivel de estudios")
-                }
-                else if(formulario.escol[0].checked == true && formulario.escol[1].checked == true && formulario.escol[4].checked == true ){
-                    alert("Selecciona sólo un nivel de estudios")
-                }
-                else if(formulario.escol[0].checked == true && formulario.escol[2].checked == true && formulario.escol[3].checked == true ){
-                    alert("Selecciona sólo un nivel de estudios")
-                }
-                else if(formulario.escol[0].checked == true && formulario.escol[2].checked == true && formulario.escol[4].checked == true ){
-                    alert("Selecciona sólo un nivel de estudios")
-                }
-                else if(formulario.escol[0].checked == true && formulario.escol[3].checked == true && formulario.escol[4].checked == true ){
-                    alert("Selecciona sólo un nivel de estudios")
-                }
                 else if(formulario.escol[1].checked == true && formulario.escol[2].checked == true && formulario.escol[3].checked == true ){
                     alert("Selecciona sólo un nivel de estudios")
                 }
                 else if(formulario.escol[1].checked == true && formulario.escol[2].checked == true && formulario.escol[4].checked == true ){
                     alert("Selecciona sólo un nivel de estudios")
                 }
+                else if(formulario.escol[1].checked == true && formulario.escol[2].checked == true && formulario.escol[5].checked == true ){
+                    alert("Selecciona sólo un nivel de estudios")
+                }
+                else if(formulario.escol[1].checked == true && formulario.escol[2].checked == true && formulario.escol[6].checked == true ){
+                    alert("Selecciona sólo un nivel de estudios")
+                }
                 else if(formulario.escol[1].checked == true && formulario.escol[3].checked == true && formulario.escol[4].checked == true ){
                     alert("Selecciona sólo un nivel de estudios")
                 }
+                else if(formulario.escol[1].checked == true && formulario.escol[3].checked == true && formulario.escol[5].checked == true ){
+                    alert("Selecciona sólo un nivel de estudios")
+                }
+                else if(formulario.escol[1].checked == true && formulario.escol[3].checked == true && formulario.escol[6].checked == true ){
+                    alert("Selecciona sólo un nivel de estudios")
+                }
+                else if(formulario.escol[1].checked == true && formulario.escol[4].checked == true && formulario.escol[5].checked == true ){
+                    alert("Selecciona sólo un nivel de estudios")
+                }
+                else if(formulario.escol[1].checked == true && formulario.escol[4].checked == true && formulario.escol[6].checked == true ){
+                    alert("Selecciona sólo un nivel de estudios")
+                }
+                else if(formulario.escol[1].checked == true && formulario.escol[5].checked == true && formulario.escol[6].checked == true ){
+                    alert("Selecciona sólo un nivel de estudios")
+                }
+
                 else if(formulario.escol[2].checked == true && formulario.escol[3].checked == true && formulario.escol[4].checked == true ){
                     alert("Selecciona sólo un nivel de estudios")
                 }
+                else if(formulario.escol[2].checked == true && formulario.escol[3].checked == true && formulario.escol[5].checked == true ){
+                    alert("Selecciona sólo un nivel de estudios")
+                }
+                else if(formulario.escol[2].checked == true && formulario.escol[3].checked == true && formulario.escol[6].checked == true ){
+                    alert("Selecciona sólo un nivel de estudios")
+                }
+                else if(formulario.escol[2].checked == true && formulario.escol[4].checked == true && formulario.escol[5].checked == true ){
+                    alert("Selecciona sólo un nivel de estudios")
+                }
+                else if(formulario.escol[2].checked == true && formulario.escol[4].checked == true && formulario.escol[6].checked == true ){
+                    alert("Selecciona sólo un nivel de estudios")
+                }
+                else if(formulario.escol[2].checked == true && formulario.escol[5].checked == true && formulario.escol[6].checked == true ){
+                    alert("Selecciona sólo un nivel de estudios")
+                }
+                else if(formulario.escol[3].checked == true && formulario.escol[4].checked == true && formulario.escol[5].checked == true ){
+                    alert("Selecciona sólo un nivel de estudios")
+                }
+                else if(formulario.escol[3].checked == true && formulario.escol[4].checked == true && formulario.escol[6].checked == true ){
+                    alert("Selecciona sólo un nivel de estudios")
+                }
+                else if(formulario.escol[3].checked == true && formulario.escol[5].checked == true && formulario.escol[6].checked == true ){
+                    alert("Selecciona sólo un nivel de estudios")
+                }
+                else if(formulario.escol[4].checked == true && formulario.escol[5].checked == true && formulario.escol[6].checked == true ){
+                    alert("Selecciona sólo un nivel de estudios")
+                }
                 //cuatro escolaridades seleccionadas
-                else if(formulario.escol[0].checked == true && formulario.escol[1].checked == true && formulario.escol[2].checked == true && formulario.escol[3].checked == true){
-                    alert("Selecciona sólo un nivel de estudios")
-                }
-                else if(formulario.escol[0].checked == true && formulario.escol[1].checked == true && formulario.escol[2].checked == true && formulario.escol[4].checked == true){
-                    alert("Selecciona sólo un nivel de estudios")
-                }
-                else if(formulario.escol[0].checked == true && formulario.escol[1].checked == true && formulario.escol[3].checked == true && formulario.escol[4].checked == true){
-                    alert("Selecciona sólo un nivel de estudios")
-                }
-                else if(formulario.escol[0].checked == true && formulario.escol[2].checked == true && formulario.escol[3].checked == true && formulario.escol[4].checked == true){
-                    alert("Selecciona sólo un nivel de estudios")
-                }
                 else if(formulario.escol[1].checked == true && formulario.escol[2].checked == true && formulario.escol[3].checked == true && formulario.escol[4].checked == true){
                     alert("Selecciona sólo un nivel de estudios")
                 }
+                else if(formulario.escol[1].checked == true && formulario.escol[2].checked == true && formulario.escol[3].checked == true && formulario.escol[5].checked == true){
+                    alert("Selecciona sólo un nivel de estudios")
+                }
+                else if(formulario.escol[1].checked == true && formulario.escol[2].checked == true && formulario.escol[3].checked == true && formulario.escol[6].checked == true){
+                    alert("Selecciona sólo un nivel de estudios")
+                }
+                else if(formulario.escol[1].checked == true && formulario.escol[3].checked == true && formulario.escol[4].checked == true && formulario.escol[5].checked == true){
+                    alert("Selecciona sólo un nivel de estudios")
+                }
+                else if(formulario.escol[1].checked == true && formulario.escol[3].checked == true && formulario.escol[4].checked == true && formulario.escol[6].checked == true){
+                    alert("Selecciona sólo un nivel de estudios")
+                }
+                else if(formulario.escol[1].checked == true && formulario.escol[4].checked == true && formulario.escol[5].checked == true && formulario.escol[6].checked == true){
+                    alert("Selecciona sólo un nivel de estudios")
+                }
+
+                else if(formulario.escol[2].checked == true && formulario.escol[3].checked == true && formulario.escol[4].checked == true && formulario.escol[5].checked == true){
+                    alert("Selecciona sólo un nivel de estudios")
+                }
+                else if(formulario.escol[2].checked == true && formulario.escol[3].checked == true && formulario.escol[4].checked == true && formulario.escol[6].checked == true){
+                    alert("Selecciona sólo un nivel de estudios")
+                }
                 // Todas las escolaridades seleccionadas
-                else if(formulario.escol[0].checked == true && formulario.escol[1].checked == true && formulario.escol[2].checked == true && formulario.escol[3].checked == true && formulario.escol[4].checked == true){
+                else if(formulario.escol[2].checked == true && formulario.escol[4].checked == true && formulario.escol[5].checked == true && formulario.escol[6].checked == true && formulario.escol[4].checked == true){
+                    alert("Selecciona sólo un nivel de estudios")
+                }
+
+                else if(formulario.escol[3].checked == true && formulario.escol[4].checked == true && formulario.escol[5].checked == true && formulario.escol[6].checked == true){
                     alert("Selecciona sólo un nivel de estudios")
                 }
                 //ninguna escolaridad seleccionada
-                else if(formulario.escol[0].checked == false && formulario.escol[1].checked == false && formulario.escol[2].checked == false && formulario.escol[3].checked == false && formulario.escol[4].checked == false){
+                else if(formulario.escol[1].checked == false && formulario.escol[2].checked == false && formulario.escol[3].checked == false && formulario.escol[4].checked == false && formulario.escol[5].checked == false && formulario.escol[6].checked == false ){
                     alert("Escoge tu nivel de estudios por favor")
                 }
                 //Una selección
                
                 e.preventDefault();
              }
-
              var validar = function(e){
                 validarNombre(e);
                 validarEdad(e);
                 validarEscolaridad(e);
             };
-
             formulario.addEventListener("submit", validar);
       }())
-   
-    </script>
-</body>
+   </script>
 </html>
