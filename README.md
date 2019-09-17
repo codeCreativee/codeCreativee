@@ -1,30 +1,28 @@
 <!DOCTYPE html>
 <html>
     <head>
-           <title>Ingreso a la biblioteca</title> 
-           <link rel="stylesheet" href="web.css">
+    <title>Ingreso a la biblioteca</title> 
     </head>
     <style>
-        body{ background: #f7f1e3 }
+         body{ background: #f7f1e3 }
 
-h1,h3,#centrado{ text-align: center; } 
-
-div{ margin-bottom: 18px; } 
-
-.espaciado{ margin-right: 18px; } 
-
-form{ margin-bottom: 310px; }
-
-h2{ position: relative; text-align: center; bottom: 470px; font-size: 90px } 
-
-p{ position: relative; bottom: 300px; }
-
-</style>
+ h1,h3,#centrado{ text-align: center; }
     
+ div{ margin-bottom: 18px; }
+    
+ .espaciado{ margin-right: 18px; }
+    
+ form{ margin-bottom: 310px; }
+    
+ h2{ position: relative; text-align: center; bottom: 470px; font-size: 90px }
+    
+ p{ position: relative; bottom: 300px; }
+ </style>
+
     <form action="" id = "centrado"  method="get" name = "formulario">
     
         <h1>Registra tus datos</h1>
-
+    
         <div>
         <label for="">Nombre</label>
         <input type="text" name = "nombre">
@@ -49,7 +47,7 @@ p{ position: relative; bottom: 300px; }
             <input type="checkbox" name = "escol">
             <label for="" >Personas con discapacidad</label>
         </div>
-
+    
         <div>
             <input type="checkbox" name = "escol">
             <label for="" >Preescolar</label>
@@ -86,42 +84,40 @@ p{ position: relative; bottom: 300px; }
         <h2 id = "registroCompleto"></h2>
     
       </form>
-
-      <script>
-      
-            var mes = new Date();
-            document.write(mes.getMonth()+1 + "/");
+      <script 
+       var mes = new Date();
+ document.write(mes.getMonth()+1 + "/");
             
-            var dia = new Date(); document.write(dia.getDate() + "/");
+ var dia = new Date(); document.write(dia.getDate() + "/");
             
-            var año = new Date(); document.write(año.getFullYear());
+ var año = new Date(); document.write(año.getFullYear());
             
-            var hora = new Date(); document.write(" " + hora.getHours())
+ var hora = new Date(); document.write(" " + hora.getHours())
             
-            var minutos = new Date(); document.write(":" + minutos.getMinutes())
+ var minutos = new Date(); document.write(":" + minutos.getMinutes())
             
-                var formulario = document.getElementsByName("formulario")[0],
-                    el = formulario.elements,
-                    boton = document.getElementsByName("enviar");
+ var formulario = document.getElementsByName("formulario")[0],
+     el = formulario.elements,
+     boton = document.getElementsByName("enviar");
             
-            (function(){
+            function every(){
             
              var enviado = document.getElementById("registroCompleto");
             
-             var validarNombre = function(e){
+             function validarNombre(e){
                 if(formulario.nombre.value == 0){
                 alert("Ingresa tu nombre por favor")
                 }
                 e.preventDefault();
              };
             
-             var validarEdad = function(e){
+             function validarEdad(e){
                 if(formulario.edad.value <= 0){
                     alert("Ingresa tu edad por favor")
                 }
                 e.preventDefault();
              }
-             var validarEscolaridad = function(e){
+             function validarEscolaridad(e){
                  if(formulario.escol[1].checked == true && formulario.escol[2].checked == true || (formulario.escol[1].checked == true && formulario.escol[3].checked == true) || 
                  (formulario.escol[2].checked == true && formulario.escol[3].checked == true) || (formulario.escol[1].checked == true && formulario.escol[4].checked == true) || 
                  (formulario.escol[4].checked == true && formulario.escol[5].checked == true) || (formulario.escol[1].checked == true && formulario.escol[5].checked == true) || 
@@ -137,19 +133,18 @@ p{ position: relative; bottom: 300px; }
                  }
                  e.preventDefault();
              }
-
+    
             
              var validar = function(e){
             
                 validarNombre(e);
                 validarEdad(e);
-                validarEscolaridad();
+                validarEscolaridad(e);
                
             };
             
             formulario.addEventListener("submit", validar);
-            }())
-            </script>
-
-      
+            }
+           every();
+      </script>
       </html>
