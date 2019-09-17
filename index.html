@@ -1,151 +1,133 @@
 <!DOCTYPE html>
 <html>
     <head>
-<title>Ingreso a la biblioteca</title>
+    <title>Ingreso a la biblioteca</title> 
+    <LINK REL=styleSheet HREF="web.css" TYPE= "text/css">
     </head>
-     <style> 
-         body{ background: #f7f1e3 }
-         
-          h1,h3,#centrado{ text-align: center; }
+        <style>
+             body{ background: #f7f1e3 }
 
-          div{ margin-bottom: 18px; }
+ h1,h3,#centrado{ text-align: center; }
+    
+ div{ margin-bottom: 18px; }
+    
+ .espaciado{ margin-right: 18px; }
+    
+ form{ margin-bottom: 310px; }
+    
+ h2{ position: relative; text-align: center; bottom: 470px; font-size: 90px }
+    
+ p{ position: relative; bottom: 300px; }
+        </style>
 
-                .espaciado{ margin-right: 18px; }
+    <form action="" id = "centrado"  method="get" name = "formulario">
+    
+        <h1>Registra tus datos</h1>
+    
+        <div>
+        <label for="">Nombre</label>
+        <input type="text" name = "nombre">
+        </div>
+    
+        <div>
+        <label for="" class="espaciado" name = "edad">Edad</label>
+        <input type="number" name = "edad">
+        </div>
+    
+        <div>
+        <label for="" name = "sexo">Sexo</label>
+        <select name="sexo">
+            <option>Hombre</option>
+            <option>Mujer</option>>
+        </select>
+        </div>
+    
+    
+        <h3>Escolaridad</h3>
+        <div>
+            <input type="checkbox" name = "escol" id = "discapacidad" value="discapacidad">Personas con discapacidad<br>
+        </div>
+    
+        <div>
+            <input type="radio" name = "escol" id = "preescolar" value="Preescolar">Preescolar<br>
+        </div>
+    
+        <div>
+        <input type="radio" name = "escol" id = "primaria" value="Primaria">Primaria<br>
+        </div>
+    
+        <div>
+        <input type="radio" name = "escol" id = "secundaria" value="Secundaria">Secundaria<br>
+        </div>
+    
+        <div>
+        <input type="radio" name = "escol" id = "preparatoria" value="Preparatoria">Preparatoria<br>
+        </div>
+    
+         <div>
+        <input type="radio" name = "escol" id = "licienciatura" value="Licienciatura">Licienciatura<br>
+         </div>
+    
+        <div>
+        <input type="radio" name = "escol" id  = "posgrado" value="Posgrado">Posgrado<br>
+        </div>
 
-                 form{ margin-bottom: 310px; }
 
-                   h2{ position: relative; text-align: center; bottom: 470px; font-size: 90px }
+        <input type="submit" id = "enviar" name = "enviar" value = "Registrarse">
+    
+      
+        <h2 id = "registroCompleto"></h2>
+    
+      </form>
+      <script type="text/javascript" src="web.js"></script>
+        <script> 
+             var mes = new Date();
+ document.write(mes.getMonth()+1 + "/");
+            
+ var dia = new Date(); 
+ document.write(dia.getDate() + "/");
+            
+ var año = new Date(); 
+ document.write(año.getFullYear());
+            
+ var hora = new Date(); 
+ document.write(" " + hora.getHours());
+            
+ var minutos = new Date(); 
+ document.write(":" + minutos.getMinutes());
+            
+var formulario = document.getElementsByName("formulario")[0],
+ elementos = formulario.elements,
+ boton = document.getElementById("enviar");
 
-                  p{ position: relative; bottom: 300px; } 
-    </style>
-    <body>
+ var validarNombre = function(e){
+     if(formulario.nombre.value == 0){
+         alert("Ingresa tu nombre por favor");
+         e.preventDefault();
+     }
+ }
 
-<form action="" id = "centrado"  method="get" name = "formulario">
+ var validarEdad = function(e){
+     if(formulario.edad.value <= 0 || formulario.edad.value > 110){
+        alert("Ingrese una edad entre [1-110] por favor");
+        e.preventDefault();
+     }
+ }
 
-    <h1>Registra tus datos</h1>
+ var validarEscolaridad = function(e){
+     if(formulario.escol.value == ""){
+        alert("Escoja una escolaridad por favor");
+        e.preventDefault();
+     }
+ }
 
-    <div>
-    <label for="">Nombre</label>
-    <input type="text" name = "nombre">
-    </div>
+ var validar = function(e){
+     validarNombre(e);
+     validarEdad(e);
+     validarEscolaridad(e);
+ }
 
-    <div>
-    <label for="" class="espaciado" name = "edad">Edad</label>
-    <input type="number" name = "edad">
-    </div>
-
-    <div>
-    <label for="" name = "sexo">Sexo</label>
-    <select name="sexo">
-        <option>Hombre</option>
-        <option>Mujer</option>>
-    </select>
-    </div>
-
-
-    <h3>Escolaridad</h3>
-    <div>
-        <input type="checkbox" name = "escol">
-        <label for="" >Personas con discapacidad</label>
-    </div>
-
-    <div>
-        <input type="checkbox" name = "escol">
-        <label for="" >Preescolar</label>
-    </div>
-
-    <div>
-    <input type="checkbox" name = "escol">
-    <label for="" >Primaria</label>
-    </div>
-
-    <div>
-    <input type="checkbox" name = "escol">
-    <label for="" >Secundaria</label>
-    </div>
-
-    <div>
-    <input type="checkbox" name = "escol">
-    <label for="" >Preparatoria</label>
-    </div>
-
-     <div>
-    <input type="checkbox" name = "escol">
-    <label for="" >Licienciatura</label>
-     </div>
-
-    <div>
-    <input type="checkbox" name = "escol">
-    <label for="" >Posgrado</label>
-    </div>
-
-    <input type="submit" id = "enviar" name = "enviar" value = "Registrarse">
-
-  
-    <h2 id = "registroCompleto"></h2>
-
-  </form>
-  <script>
-   var mes = new Date();
-
-document.write(mes.getMonth()+1 + "/");
-
-var dia = new Date(); document.write(dia.getDate() + "/");
-
-var año = new Date(); document.write(año.getFullYear());
-
-var hora = new Date(); document.write(" " + hora.getHours())
-
-var minutos = new Date(); document.write(":" + minutos.getMinutes())
-
-var formulario = document.getElementsByName("formulario")[0], el = formulario.elements, boton = document.getElementsByName("enviar");
-
-        function every(){
-        
-         var enviado = document.getElementById("registroCompleto");
-        
-         function validarNombre(e){
-            if(formulario.nombre.value == 0){
-            alert("Ingresa tu nombre por favor")
-            }
-            e.preventDefault();
-         };
-        
-         function validarEdad(e){
-            if(formulario.edad.value <= 0){
-                alert("Ingresa tu edad por favor")
-            }
-            e.preventDefault();
-         }
-         function validarEscolaridad(e){
-             if(formulario.escol[1].checked == true && formulario.escol[2].checked == true || (formulario.escol[1].checked == true && formulario.escol[3].checked == true) || 
-             (formulario.escol[2].checked == true && formulario.escol[3].checked == true) || (formulario.escol[1].checked == true && formulario.escol[4].checked == true) || 
-             (formulario.escol[4].checked == true && formulario.escol[5].checked == true) || (formulario.escol[1].checked == true && formulario.escol[5].checked == true) || 
-             (formulario.escol[1].checked == true && formulario.esco[6].checked == true) || (formulario.escol[2].checked == true && formulario.escol[4].checked == true) || 
-             (formulario.escol[2].checked == true && formulario.escol[5].checked == true) || (formulario.escol[2].checked == true && formulario[6].escol.checked == true) || 
-             (formulario.escol[3].checked == true && formulario.escol[4].checked == true) || (formulario.escol[3].checked == true && formulario[5].escol.checked == true) || 
-             (formulario.escol[4].checked == true && formulario.escol[6].checked == true) || (formulario.escol[3].checked == true && formulario[6].escol.checked == true) || 
-             (formulario.escol[5].checked == true && formulario.escol[6].checked == true) || (formulario.escol[1].checked == false && formulario.escol[2].checked == false && 
-             formulario.escol[3].checked == false && formulario.escol[4].checked == false && formulario.escol[5].checked == false && formulario.escol[6].checked == false) || 
-             (formulario.escol[1].checked == true && formulario.escol[2].checked == true && formulario.escol[3].checked == true && formulario.escol[4].checked == true && 
-             formulario.escol[5].checked == true && formulario.escol[6].checked == true)){
-                alert("Ingresa una escolaridad válida por favor")
-             }
-             e.preventDefault();
-         }
-
-        
-         var validar = function(e){
-        
-            validarNombre(e);
-            validarEdad(e);
-            validarEscolaridad(e);
-           
-        };
-        
-        formulario.addEventListener("submit", validar);
-        }
-       every();
-  </script>
-    </body>
-  </html>
+ formulario.addEventListener("submit", validar);
+        </script>
+      </html>
+    
