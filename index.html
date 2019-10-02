@@ -1,133 +1,112 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <title>Ingreso a la biblioteca</title> 
+        <meta charset="utf-8">
+    <title>Practica3-hojaDeCalculo_GACG</title> 
     <LINK REL=styleSheet HREF="web.css" TYPE= "text/css">
     </head>
         <style>
              body{ background: #f7f1e3 }
+             table tr td{
+                 border-left: 1px solid black;
+                 padding-left: 20px;
+             }
+            table tr th{
+                color:#960606;
+            }
+            table{
+                margin:auto;
+            }
+            h1{
+                color:#063496;
+                text-align: center;
+            }
 
- h1,h3,#centrado{ text-align: center; }
-    
- div{ margin-bottom: 18px; }
-    
- .espaciado{ margin-right: 18px; }
-    
- form{ margin-bottom: 310px; }
-    
- h2{ position: relative; text-align: center; bottom: 470px; font-size: 90px }
-    
- p{ position: relative; bottom: 300px; }
         </style>
+       <body>
+           <h1>Practica3-hojaDeCalculo_GACG</h1>
+           <table cellpadding="1" cellspacing="1">
+<tr>
+	<th>Nombre</th>
+	<th>Domicilio</th>
+	<th>Ciudad</th>
+	<th>Código postal</th>
+	<th>Teléfono</th>
+</tr>
+<tr>
+	<td>Raymond Wilcox</td>
+	<td>290-1342 Tellus. St.</td>
+	<td>Nairn</td>
+	<td>364288</td>
+	<td>16960910-6399</td>
+</tr>
+<tr>
+	<td>Jacqueline Petersen</td>
+	<td>8222 Erat. Avenue</td>
+	<td>Cobourg</td>
+	<td>468872</td>
+	<td>16860418-8048</td>
+</tr>
+<tr>
+	<td>Zachery Turner</td>
+	<td>Ap #648-5917 Sit Rd.</td>
+	<td>Wisbech</td>
+	<td>375006</td>
+	<td>16101205-5826</td>
+</tr>
+<tr>
+	<td>Oleg Vega</td>
+	<td>Ap #776-9641 Diam St.</td>
+	<td>Remagne</td>
+	<td>105362</td>
+	<td>16881010-2429</td>
+</tr>
+<tr>
+	<td>Whitney Harper</td>
+	<td>P.O. Box 392, 8332 Tempor Rd.</td>
+	<td>Hantes-WihŽries</td>
+	<td>175484</td>
+	<td>16371024-1617</td>
+</tr>
+<tr>
+	<td>David Ford</td>
+	<td>4627 Senectus Road</td>
+	<td>Kanchipuram</td>
+	<td>740289</td>
+	<td>16110708-9102</td>
+</tr>
+<tr>
+	<td>Hiram Nichols</td>
+	<td>7798 Ornare Ave</td>
+	<td>Chhindwara</td>
+	<td>323461</td>
+	<td>16151017-4525</td>
+</tr>
+<tr>
+	<td>Francesca Griffin</td>
+	<td>P.O. Box 706, 2190 Luctus St.</td>
+	<td>Albagiara</td>
+	<td>048481</td>
+	<td>16310429-9502</td>
+</tr>
+<tr>
+	<td>Iona Avery</td>
+	<td>P.O. Box 328, 7919 Facilisis Rd.</td>
+	<td>Gerpinnes</td>
+	<td>254885</td>
+	<td>16290415-5419</td>
+</tr>
+<tr>
+	<td>Justina Cervantes</td>
+	<td>9830 Purus. Street</td>
+	<td>Bellevue</td>
+	<td>845410</td>
+	<td>16850813-5046</td>
+</tr>
+               
+           </table>
+        </body>
 
-    <form action="" id = "centrado"  method="get" name = "formulario">
     
-        <h1>Registra tus datos</h1>
-    
-        <div>
-        <label for="">Nombre</label>
-        <input type="text" name = "nombre">
-        </div>
-    
-        <div>
-        <label for="" class="espaciado" name = "edad">Edad</label>
-        <input type="number" name = "edad">
-        </div>
-    
-        <div>
-        <label for="" name = "sexo">Sexo</label>
-        <select name="sexo">
-            <option>Hombre</option>
-            <option>Mujer</option>>
-        </select>
-        </div>
-    
-    
-        <h3>Escolaridad</h3>
-        <div>
-            <input type="checkbox" name = "escol" id = "discapacidad" value="discapacidad">Personas con discapacidad<br>
-        </div>
-    
-        <div>
-            <input type="radio" name = "escol" id = "preescolar" value="Preescolar">Preescolar<br>
-        </div>
-    
-        <div>
-        <input type="radio" name = "escol" id = "primaria" value="Primaria">Primaria<br>
-        </div>
-    
-        <div>
-        <input type="radio" name = "escol" id = "secundaria" value="Secundaria">Secundaria<br>
-        </div>
-    
-        <div>
-        <input type="radio" name = "escol" id = "preparatoria" value="Preparatoria">Preparatoria<br>
-        </div>
-    
-         <div>
-        <input type="radio" name = "escol" id = "licienciatura" value="Licienciatura">Licienciatura<br>
-         </div>
-    
-        <div>
-        <input type="radio" name = "escol" id  = "posgrado" value="Posgrado">Posgrado<br>
-        </div>
-
-
-        <input type="submit" id = "enviar" name = "enviar" value = "Registrarse">
-    
-      
-        <h2 id = "registroCompleto"></h2>
-    
-      </form>
-      <script type="text/javascript" src="web.js"></script>
-        <script> 
-             var mes = new Date();
- document.write(mes.getMonth()+1 + "/");
-            
- var dia = new Date(); 
- document.write(dia.getDate() + "/");
-            
- var año = new Date(); 
- document.write(año.getFullYear());
-            
- var hora = new Date(); 
- document.write(" " + hora.getHours());
-            
- var minutos = new Date(); 
- document.write(":" + minutos.getMinutes());
-            
-var formulario = document.getElementsByName("formulario")[0],
- elementos = formulario.elements,
- boton = document.getElementById("enviar");
-
- var validarNombre = function(e){
-     if(formulario.nombre.value == 0){
-         alert("Ingresa tu nombre por favor");
-         e.preventDefault();
-     }
- }
-
- var validarEdad = function(e){
-     if(formulario.edad.value <= 0 || formulario.edad.value > 110){
-        alert("Ingrese una edad entre [1-110] por favor");
-        e.preventDefault();
-     }
- }
-
- var validarEscolaridad = function(e){
-     if(formulario.escol.value == ""){
-        alert("Escoja una escolaridad por favor");
-        e.preventDefault();
-     }
- }
-
- var validar = function(e){
-     validarNombre(e);
-     validarEdad(e);
-     validarEscolaridad(e);
- }
-
- formulario.addEventListener("submit", validar);
-        </script>
       </html>
     
